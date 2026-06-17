@@ -1,0 +1,5 @@
+/* Adiciona um espaço na parte inferior do corpo para o footer não esconder nada */
+body {
+    padding-bottom: 60px;
+    /* Ajuste conforme a altura do seu footer */
+}

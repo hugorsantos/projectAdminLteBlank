@@ -1,0 +1,6 @@
+/* Opening offcanvas as a component requires this style in order to scroll */
+:host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
