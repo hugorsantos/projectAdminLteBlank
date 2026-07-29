@@ -1,0 +1,42 @@
+<div class="sidebar-wrapper">
+  <!-- Header de Perfil do Usuário -->
+  <div class="user-profile">
+    <div class="avatar-container">
+      <mat-icon class="avatar-icon">account_circle</mat-icon>
+    </div>
+    <span class="user-name">App Usuário</span>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- Lista de Navegação -->
+  <mat-nav-list class="navigation-list">
+    @for (item of menuItems; track item.title) {
+      @if (item.submenu) {
+        <!-- Item Expansível (Submenu) -->
+        <div class="menu-item-with-submenu">
+          <div class="menu-item-header" (click)="toggleSubmenu(item.title)">
+            <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
+            <span>{{ item.title }}</span>
+            <mat-icon class="expand-icon" [style.transform]="isSubmenuExpanded(item.title) ? 'rotate(180deg)' : 'rotate(0deg)'">expand_more</mat-icon>
+          </div>
+          <div class="submenu-container" [class.expanded]="isSubmenuExpanded(item.title)">
+            <mat-nav-list class="submenu-list">
+              @for (sub of item.submenu; track sub.title) {
+                <a mat-list-item [routerLink]="sub.route" routerLinkActive="active-link" class="submenu-item">
+                  <span matListItemTitle class="submenu-text">{{ sub.title }}</span>
+                </a>
+              }
+            </mat-nav-list>
+          </div>
+        </div>
+      } @else {
+        <!-- Item Simples -->
+        <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link" class="menu-item">
+          <mat-icon matListItemIcon class="menu-icon">{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ item.title }}</span>
+        </a>
+      }
+    }
+  </mat-nav-list>
+</div>

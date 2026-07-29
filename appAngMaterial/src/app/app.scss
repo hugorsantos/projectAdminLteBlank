@@ -1,0 +1,38 @@
+.layout-container {
+  position: absolute;
+  top: 64px; // Altura exata da Navbar
+  bottom: 48px; // Altura exata do Footer
+  left: 0;
+  right: 0;
+  background-color: #f8fafc;
+}
+
+.main-sidebar {
+  width: 260px;
+  border-right: none !important;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.content-body {
+  padding: 24px;
+  flex: 1;
+}
+
+// Media Query para Responsividade em Smartphones e Tablets pequenos
+@media (max-width: 768px) {
+  .main-sidebar {
+    position: fixed !important;
+    top: 64px !important;
+    bottom: 48px !important;
+  }
+  
+  ::ng-deep .mat-sidenav-fixed {
+    position: fixed !important;
+  }
+}

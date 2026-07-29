@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<mat-sidenav-container class="layout-container" autosize>
+  <!-- Sidebar Trancada em Modo "side" no Desktop e "over" no responsivo se estendido -->
+  <mat-sidenav 
+    #sidenav 
+    mode="side" 
+    [opened]="menuService.sidebarOpen()" 
+    class="main-sidebar">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <!-- Área Principal de Conteúdo -->
+  <mat-sidenav-content class="main-content-wrapper">
+    <main class="content-body">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>

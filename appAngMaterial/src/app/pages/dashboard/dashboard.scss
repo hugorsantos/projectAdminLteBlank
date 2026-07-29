@@ -1,0 +1,44 @@
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+
+  h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .value {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+  }
+}
+
+.content-placeholder {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  border: 2px dashed #cbd5e1;
+  text-align: center;
+  color: #64748b;
+}
