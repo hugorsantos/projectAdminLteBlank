@@ -32,17 +32,17 @@ export const routes: Routes = [
   },
   {
     path: 'relatorios',
-    loadComponent: () => import('./pages/placeholder/placeholder').then(m => m.Placeholder),
+    loadComponent: () => import('./pages/relatorios/relatorios').then(m => m.Relatorios),
     data: { title: 'Relatórios' }
   },
   {
     path: 'configuracoes',
-    loadComponent: () => import('./pages/placeholder/placeholder').then(m => m.Placeholder),
+    loadComponent: () => import('./pages/configuracoes/configuracoes').then(m => m.Configuracoes),
     data: { title: 'Configurações' }
   },
   {
     path: 'ajuda',
-    loadComponent: () => import('./pages/placeholder/placeholder').then(m => m.Placeholder),
+    loadComponent: () => import('./pages/ajuda/ajuda').then(m => m.Ajuda),
     data: { title: 'Ajuda' }
   },
   {

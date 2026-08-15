@@ -1,0 +1,40 @@
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  margin-bottom: 16px;
+}
+
+mat-icon[mat-card-avatar] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e2e8f0;
+  border-radius: 50%;
+  color: #475569;
+}
+
+.relatorios-table {
+  width: 100%;
+}
+
+mat-chip {
+  &.status-concluido {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  &.status-processando {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+
+  &.status-erro {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+}

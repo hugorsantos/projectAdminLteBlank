@@ -1,0 +1,72 @@
+<div class="configuracoes-page">
+  <h1 class="page-title">Configurações</h1>
+
+  <mat-card class="settings-card" appearance="outlined">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>notifications</mat-icon>
+      <mat-card-title>Notificações</mat-card-title>
+      <mat-card-subtitle>Gerencie como você recebe avisos do sistema</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="setting-item">
+        <div class="setting-info">
+          <span class="setting-label">Notificações por e-mail</span>
+          <span class="setting-description">Receba atualizações importantes no seu e-mail</span>
+        </div>
+        <mat-slide-toggle
+          [checked]="notificacoesEmail()"
+          (change)="notificacoesEmail.set($event.checked)"
+        />
+      </div>
+      <mat-divider />
+      <div class="setting-item">
+        <div class="setting-info">
+          <span class="setting-label">Notificações push</span>
+          <span class="setting-description">Receba alertas em tempo real no navegador</span>
+        </div>
+        <mat-slide-toggle
+          [checked]="notificacoesPush()"
+          (change)="notificacoesPush.set($event.checked)"
+        />
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="settings-card" appearance="outlined">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>tune</mat-icon>
+      <mat-card-title>Preferências</mat-card-title>
+      <mat-card-subtitle>Personalize a aparência e o idioma</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="setting-item">
+        <div class="setting-info">
+          <span class="setting-label">Tema escuro</span>
+          <span class="setting-description">Alterna entre o tema claro e escuro</span>
+        </div>
+        <mat-slide-toggle [checked]="temaEscuro()" (change)="temaEscuro.set($event.checked)" />
+      </div>
+      <mat-divider />
+      <div class="setting-item">
+        <div class="setting-info">
+          <span class="setting-label">Idioma</span>
+          <span class="setting-description">Selecione o idioma da interface</span>
+        </div>
+        <mat-form-field appearance="outline" class="idioma-field">
+          <mat-select [value]="idioma()" (selectionChange)="idioma.set($event.value)">
+            @for (item of idiomas; track item.valor) {
+              <mat-option [value]="item.valor">{{ item.label }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="actions">
+    <button mat-flat-button color="primary" (click)="salvar()">
+      <mat-icon>save</mat-icon>
+      Salvar alterações
+    </button>
+  </div>
+</div>
